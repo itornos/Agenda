@@ -20,7 +20,7 @@ public class Auxiliar {
         }
 		return numero;//numero devuelto
     }
-    
+    //dkfsrjurghfsrtkhu
 	public static boolean prueba(){
 		boolean repetido=true;
 		while(1<2){//bluce infinito que se rompe con la decision correcta
