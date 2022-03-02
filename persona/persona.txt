@@ -1,0 +1,2 @@
+12345678;A;izan;tornos;bernal;hombre;20;34;123456789;
+12345687;A;izan;tornos;bernal;hombre;20;34;123456789;
