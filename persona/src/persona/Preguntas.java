@@ -9,12 +9,16 @@ public class Preguntas {
 	Persona P = new Persona();
 	Ficheros fichero = new Ficheros();
 	
+	//Preguntas sobre los datos de la persona
 	public void preguntas() throws IOException {
 		
 		prueba = true;
 		
+		//Prueba de DNI bien formado y no repetido
 		while(prueba) {
 			prueba = false;
+			
+			//Mentras el DNI no este bien formado no sale del bucle
 			while(1<2) {
 				System.out.println("Dame los numeros del DNI");
 				P.DNINumero = Auxiliar.registroNumero();
@@ -24,6 +28,7 @@ public class Preguntas {
 				}
 			}
 			
+			//Mentras el DNI no este bien formado no sale del bucle
 			while(1<2) {
 				System.out.println("Dame la letra del DNI");
 				P.DNILetra = Auxiliar.sc.nextLine();	
@@ -33,6 +38,7 @@ public class Preguntas {
 				}
 			}
 	
+			//Comprobacion de la existencia del DNI, si existe dentro del fichero se pide otro
 			for(int i=0;i<Persona.lista.size();i++) {	
 				if(Persona.lista.get(i).DNINumero == P.DNINumero && Persona.lista.get(i).DNILetra.equals(P.DNILetra)) {
 					System.out.println("Este DNI ya esta asignado a un nombre, 1_Prueba otro o 2_salir");
@@ -55,6 +61,7 @@ public class Preguntas {
 		System.out.println("Dame el apellido 2");
 		P.apellido2 = Auxiliar.sc.nextLine();
 		
+		//Mientras el sexo de la persona no sea hombre mujer o ninguno se repite
 		while(1<2) {
 			System.out.println("Dame el sexo, hombre mujer o ninguno");
 			P.sexo = Auxiliar.sc.nextLine();
@@ -64,6 +71,7 @@ public class Preguntas {
 			}
 		}
 		
+		//Mientras la edad no sea >= de 0 se repite
 		while(1<2) {
 			System.out.println("Dame la edad");
 			P.edad = Auxiliar.registroNumero();
@@ -72,6 +80,7 @@ public class Preguntas {
 			}
 		}
 		
+		//Mientras el prefijo no sea <= de 3 digitos se repite
 		while(1<2) {
 			System.out.println("Dame el prefijo de telefono del pais");
 			P.cod_tlf = Auxiliar.registroNumero();
@@ -81,6 +90,7 @@ public class Preguntas {
 			}
 		}
 			
+		//Mientras el telefono no sea == de 9 digitos se repite
 		while(1<2) {
 			System.out.println("Dame la numero de telefono");
 			P.tlf = Auxiliar.registroNumero();
@@ -93,10 +103,10 @@ public class Preguntas {
 		System.out.println("Quieres guardar los datos\n1_SI\t2_NO");
 		prueba = Auxiliar.prueba();
 		if(prueba) {
-			mayus();
-			sinTilde();
-			fichero.escribir(P.DNINumero,P.DNILetra,P.nombre,P.apellido1,P.apellido2,P.sexo,P.edad,P.cod_tlf,P.tlf);
-			Persona.lista.add(P);
+			mayus();//Datos sin mayusculas
+			sinTilde();//quitamos caracteres extraños
+			fichero.escribir(P.DNINumero,P.DNILetra,P.nombre,P.apellido1,P.apellido2,P.sexo,P.edad,P.cod_tlf,P.tlf);//Se guardan los datos en el fichero
+			Persona.lista.add(P);//Se guardan los datos en la lista
 		}
 
 		System.out.println("Quieres registrar mas datos?\n1_SI\t2_NO");
@@ -106,7 +116,7 @@ public class Preguntas {
 		}
 	}
 	
-	
+	//Se quitan las mayusculas
 	public void mayus() {
 		
 		P.nombre = P.nombre.toLowerCase();
@@ -115,7 +125,7 @@ public class Preguntas {
 		P.sexo = P.sexo.toLowerCase();
 	}
 	
-	
+	//Se quitan los caracteres extraños
 	public void sinTilde() {
 		
 		P.nombre = Normalizer.normalize(P.nombre, Normalizer.Form.NFD);

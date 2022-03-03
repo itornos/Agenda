@@ -22,7 +22,7 @@ public class Main {
 			System.out.println("3_ Buscar datos");
 			System.out.println("4_ Terminar");
 		
-			//Se escanea lo escrito en la terminal
+			//Se escanea lo escrito en la terminal y se mueve a la opcion seleccionada
 			int opcion = Auxiliar.registroNumero();
 			System.out.println();
 			switch(opcion) {
