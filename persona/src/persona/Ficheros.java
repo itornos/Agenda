@@ -39,6 +39,7 @@ public class Ficheros {
 				fichero = new FileReader("persona.txt");
 				repetido = false;
 			} catch (Exception e) {
+				System.out.println("no se ha encotrdao es fichero");
 			}
 		}
 		while((caracter = fichero.read()) != -1) {

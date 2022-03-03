@@ -13,9 +13,9 @@ public class Persona {
 	int edad;
 	int tlf;
 	int cod_tlf;
-	static ArrayList<Persona> lista = new ArrayList();
+	static ArrayList<Persona> lista;
 	
-    public Persona (int DNINumero, String DNILetra, String nombre, String apellido1, String apellido2, String sexo, int edad, int cod_tlf, int tlf){
+	public Persona (int DNINumero, String DNILetra, String nombre, String apellido1, String apellido2, String sexo, int edad, int cod_tlf, int tlf){
     	this.DNINumero = DNINumero;
     	this.DNILetra = DNILetra;
 		this.nombre = nombre;
@@ -41,8 +41,8 @@ public class Persona {
 			System.out.println("Persona "+personas);
 			System.out.println("DNI: \t\t"+DNI);
 			System.out.println("Nombre: \t"+i.nombre);
-			System.out.println("1º apellido: \t"+i.apellido1);
-			System.out.println("2º apellido: \t"+i.apellido2);
+			System.out.println("1ï¿½ apellido: \t"+i.apellido1);
+			System.out.println("2ï¿½ apellido: \t"+i.apellido2);
 			System.out.println("Sexo: \t\t"+i.sexo);
 			System.out.println("Edad: \t\t"+i.edad);
 			System.out.println("Telefono: \t"+telefono);
@@ -67,8 +67,8 @@ public class Persona {
 				existe = true;
 				System.out.println("DNI: \t\t"+DNI);
 				System.out.println("Nombre: \t\t"+i.nombre);
-				System.out.println("1º apellido: \t"+i.apellido1);
-				System.out.println("2º apellido: \t"+i.apellido2);
+				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
+				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t"+telefono);
