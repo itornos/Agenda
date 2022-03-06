@@ -8,6 +8,7 @@ public class Main {
 		boolean salir = true;
 			
 		Persona persona = new Persona();
+		Buscador buscador = new Buscador();
 		Preguntas preguntas = new Preguntas();
 		Ficheros fichero = new Ficheros();
 
@@ -33,7 +34,7 @@ public class Main {
 				persona.leerPersona();
 				break;
 			case 3:
-				persona.buscarDato();
+				buscador.menu();
 				break;
 			case 4:
 				salir = false;

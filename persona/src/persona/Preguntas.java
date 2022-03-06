@@ -32,34 +32,48 @@ public class Preguntas {
 			while(1<2) {
 				System.out.println("Dame la letra del DNI");
 				P.DNILetra = Auxiliar.sc.nextLine();	
-				String comprobacion = P.DNILetra+"";
-				if(comprobacion.length()== 1) {
+				if(P.DNILetra.length()== 1) {
 					break;
 				}
 			}
 	
 			//Comprobacion de la existencia del DNI, si existe dentro del fichero se pide otro
-			for(int i=0;i<Persona.lista.size();i++) {	
-				if(Persona.lista.get(i).DNINumero == P.DNINumero && Persona.lista.get(i).DNILetra.equals(P.DNILetra)) {
-					System.out.println("Este DNI ya esta asignado a un nombre, 1_Prueba otro o 2_salir");
+			for(Persona i: Persona.lista) {
+				if(i.DNINumero == P.DNINumero) {
+
+					if(i.DNILetra.equals(P.DNILetra)){
+						System.out.println("Este DNI ya esta asignado a un nombre");
+					}else{
+						System.out.println("No puede haber dos personas con el mismo nÃºmero de DNI y distintas letras");
+					}
+
+					System.out.println("1_Prueba otro o 2_salir");
 					prueba = Auxiliar.prueba();
 					if(!prueba) {
 						return;
 					}else{
 						break;
 					}
-				}	
+				}		
 			}
 		}
 		
+		System.out.println();//salto
+
 		System.out.println("Dame la nombre");
 		P.nombre = Auxiliar.sc.nextLine();
 		
+		System.out.println();//salto
+
 		System.out.println("Dame el apellido 1");
 		P.apellido1 = Auxiliar.sc.nextLine();
+
+		System.out.println();//salto
 		
 		System.out.println("Dame el apellido 2");
 		P.apellido2 = Auxiliar.sc.nextLine();
+
+		System.out.println();//salto
 		
 		//Mientras el sexo de la persona no sea hombre mujer o ninguno se repite
 		while(1<2) {
@@ -70,6 +84,8 @@ public class Preguntas {
 				break;
 			}
 		}
+
+		System.out.println();//salto
 		
 		//Mientras la edad no sea >= de 0 se repite
 		while(1<2) {
@@ -79,35 +95,54 @@ public class Preguntas {
 				break;
 			}
 		}
+
+		System.out.println();//salto
 		
 		//Mientras el prefijo no sea <= de 3 digitos se repite
 		while(1<2) {
 			System.out.println("Dame el prefijo de telefono del pais");
 			P.cod_tlf = Auxiliar.registroNumero();
-			String tlfPrueba = P.tlf+"";
+			String tlfPrueba = P.cod_tlf+"";
 			if(tlfPrueba.length()<=3) {
 				break;
+			}else{
+				System.out.println("El prefijo debe de tener 3 numeros o menos");
 			}
 		}
+
+		System.out.println();//salto
 			
 		//Mientras el telefono no sea == de 9 digitos se repite
 		while(1<2) {
-			System.out.println("Dame la numero de telefono");
+			System.out.println("Dame el numero de telefono");
 			P.tlf = Auxiliar.registroNumero();
 			String tlfPrueba = P.tlf+"";
+
+			for(Persona i: Persona.lista) {
+				if(i.tlf == P.tlf) {
+					System.out.println("Este numero de telefono ya esta asignado a otra persona");
+					tlfPrueba = "repetido";
+					break;
+				}
+			}
+
 			if(tlfPrueba.length()==9) {
 				break;
 			}
 		}
 
+		System.out.println();//salto
+
 		System.out.println("Quieres guardar los datos\n1_SI\t2_NO");
 		prueba = Auxiliar.prueba();
 		if(prueba) {
 			mayus();//Datos sin mayusculas
-			sinTilde();//quitamos caracteres extraños
+			sinTilde();//quitamos caracteres extraï¿½os
 			fichero.escribir(P.DNINumero,P.DNILetra,P.nombre,P.apellido1,P.apellido2,P.sexo,P.edad,P.cod_tlf,P.tlf);//Se guardan los datos en el fichero
 			Persona.lista.add(P);//Se guardan los datos en la lista
 		}
+
+		System.out.println();//salto
 
 		System.out.println("Quieres registrar mas datos?\n1_SI\t2_NO");
 		prueba = Auxiliar.prueba();
@@ -125,7 +160,7 @@ public class Preguntas {
 		P.sexo = P.sexo.toLowerCase();
 	}
 	
-	//Se quitan los caracteres extraños
+	//Se quitan los caracteres extraï¿½os
 	public void sinTilde() {
 		
 		P.nombre = Normalizer.normalize(P.nombre, Normalizer.Form.NFD);
