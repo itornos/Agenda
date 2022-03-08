@@ -43,7 +43,6 @@ public class Buscador {
 
     public void buscarDNI() {
 		
-		boolean existe = false;
 		System.out.println("Dime el DNI de la persona");
 		String palabra = Auxiliar.sc.nextLine();
 		
@@ -53,11 +52,11 @@ public class Buscador {
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra.equals(DNIPrueba)) {
-				existe = true;
+				
 				System.out.println("DNI: \t\t"+DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);
@@ -78,7 +77,6 @@ public class Buscador {
 
     public void buscarNombre() {
 		
-		boolean existe = false;
 		System.out.println("Dime el Nombre de la persona");
 		String palabra = Auxiliar.sc.nextLine();
 		
@@ -88,11 +86,11 @@ public class Buscador {
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra.toLowerCase().equals(i.nombre.toLowerCase())) {
-				existe = true;
+				
 				System.out.println("DNI: \t\t"+DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);
@@ -113,8 +111,7 @@ public class Buscador {
 
     public void buscarApellido1() {
 		
-		boolean existe = false;
-		System.out.println("Dime el 1Âº apellido de la persona");
+		System.out.println("Dime el 1º apellido de la persona");
 		String palabra = Auxiliar.sc.nextLine();
 		
 		for(Persona i : Persona.lista) {	
@@ -123,11 +120,11 @@ public class Buscador {
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra.toLowerCase().equals(i.apellido1.toLowerCase())) {
-				existe = true;
+				
 				System.out.println("DNI: \t\t"+DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);
@@ -147,22 +144,20 @@ public class Buscador {
 	}
 
     public void buscarApellido2() {
-		
-		boolean existe = false;
-		System.out.println("Dime el 2Âº apellido de la persona");
+			
+		System.out.println("Dime el 2º apellido de la persona");
 		String palabra = Auxiliar.sc.nextLine();
-		
+	
 		for(Persona i : Persona.lista) {	
 			
 			String DNIPrueba = i.DNINumero + i.DNILetra;
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra.toLowerCase().equals(i.apellido2.toLowerCase())) {
-				existe = true;
 				System.out.println("DNI: \t\t"+DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);
@@ -183,7 +178,6 @@ public class Buscador {
 
     public void buscarSexo() {
 		
-		boolean existe = false;
 		System.out.println("Dime el sexo de la persona");
 		String palabra = Auxiliar.sc.nextLine();
 		
@@ -193,11 +187,10 @@ public class Buscador {
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra.toLowerCase().equals(i.sexo)) {
-				existe = true;
 				System.out.println("DNI: \t\t"+DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);
@@ -218,7 +211,7 @@ public class Buscador {
 
 	public void buscarEdad() {
 		
-		boolean existe = false;
+		
 		System.out.println("Dime la edad de la persona");
 		int palabra = Auxiliar.registroNumero();
 		
@@ -228,11 +221,10 @@ public class Buscador {
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra == i.edad) {
-				existe = true;
 				System.out.println("DNI: \t\t"+ DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);
@@ -253,12 +245,11 @@ public class Buscador {
 
     public void buscarTelefono() {
 		
-		boolean existe = false;
 		System.out.println("Dime el prefijo del numero de telefono");
 		String palabra = Auxiliar.registroNumero() + "";//Pedimos un int llamando al metedo y sumamos nada para que pase de int a String
 
 		System.out.println("Dime el numero del numero de telefono");
-		palabra = palabra + " " +Auxiliar.registroNumero();//Se aÃ±ade el numero al prefijo
+		palabra = palabra + " " +Auxiliar.registroNumero();//Se añade el numero al prefijo
 
 		for(Persona i : Persona.lista) {	
 			
@@ -266,11 +257,10 @@ public class Buscador {
 			String telefono = i.cod_tlf + " " + i.tlf;
 			
 			if(palabra.toLowerCase().equals(telefono)) {
-				existe = true;
 				System.out.println("DNI: \t\t"+DNIPrueba);
 				System.out.println("Nombre: \t"+i.nombre);
-				System.out.println("1ï¿½ apellido: \t"+i.apellido1);
-				System.out.println("2ï¿½ apellido: \t"+i.apellido2);
+				System.out.println("1º apellido: \t"+i.apellido1);
+				System.out.println("2º apellido: \t"+i.apellido2);
 				System.out.println("Sexo: \t\t"+i.sexo);
 				System.out.println("Edad: \t\t"+i.edad);
 				System.out.println("Telefono: \t#"+telefono);

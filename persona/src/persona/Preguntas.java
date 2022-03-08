@@ -137,7 +137,8 @@ public class Preguntas {
 		prueba = Auxiliar.prueba();
 		if(prueba) {
 			mayus();//Datos sin mayusculas
-			sinTilde();//quitamos caracteres extraï¿½os
+			sinTilde();//quitamos caracteres extraños
+			
 			fichero.escribir(P.DNINumero,P.DNILetra,P.nombre,P.apellido1,P.apellido2,P.sexo,P.edad,P.cod_tlf,P.tlf);//Se guardan los datos en el fichero
 			Persona.lista.add(P);//Se guardan los datos en la lista
 		}
@@ -174,5 +175,14 @@ public class Preguntas {
 		
 		P.sexo = Normalizer.normalize(P.sexo, Normalizer.Form.NFD);
 		P.sexo = P.sexo.replaceAll("[\\p{InCombiningDiacriticalMarks}]", "");
+	}
+	
+	//Eliminar espacios adicionales
+	public void espacios() {
+		
+		P.nombre = P.nombre.replaceAll("( )+", "");
+		P.apellido1 = P.apellido1.replaceAll("( )+", "");
+		P.apellido2 = P.apellido2.replaceAll("( )+", "");
+		P.sexo = P.sexo.replaceAll("( )+", "");
 	}
 }
